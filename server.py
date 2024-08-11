@@ -22,4 +22,4 @@ def predict_heart_disease():
 
 if __name__=="__main__":
     print("Flask server is running ")
-app.run()
+    app.run()
