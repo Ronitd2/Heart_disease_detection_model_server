@@ -2,6 +2,7 @@ from flask import Flask,request,jsonify
 from flask_cors import CORS, cross_origin
 import json
 import util
+import os
 app = Flask(__name__)
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
@@ -22,4 +23,4 @@ def predict_heart_disease():
 
 if __name__=="__main__":
     print("Flask server is running ")
-    app.run()
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
